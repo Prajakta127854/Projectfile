@@ -1,0 +1,43 @@
+<p>prod-list works!</p>
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <button class="au-btn-submit btn btn-info" (click)="addProd()">Add Product
+            </button>
+            <hr>
+            
+            <div class="row">
+              <table class="table table-dark">
+                <thead class="thead-dark">
+                    <tr class='table-dark'>
+                        
+                        <th>Product Name</th>
+                        <th>Product Desc</th>
+                        <th>Unit Price</th>
+                       
+                        <th>Datecreated</th>
+                        <th>LastUpdated</th>                      
+                        <th>AvaliableStock</th>
+
+                    </tr>
+            
+                </thead>
+                <tr *ngFor ="let tempProd of products">
+                    
+                    
+                    <td>{{tempProd.fbproductname}}</td>
+                    <td>{{tempProd.fbproduct_description}}</td>
+                    <td>{{tempProd.unit_price}}</td>      
+                    <td>{{tempProd.date_updated}}</td>
+                    <td>{{tempProd.last_updated}}</td>
+                   
+                    <td>{{tempProd.available_stock}}</td>
+                    <td><button type="button" class="btn btn-md btn-info" (click)="updateProd(tempProd.fbproductid)">UPDATE</button></td>
+                    &nbsp; &nbsp;
+                    <td><button type="button" class="btn btn-md btn-info" (click)="deleteProd(tempProd.fbproductid)">DELETE</button></td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
